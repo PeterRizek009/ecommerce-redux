@@ -72,13 +72,31 @@ export const insertData = createAsyncThunk('data/insertData', async (newData, th
         }
         )
         const data = await res.json();
-        console.log(data);
         return data;
 
     } catch (error) {
         return rejectWithValue(error.message);
     }
 })
+
+export const deleteItem = createAsyncThunk('data/deleteItem', async (id, thunkAPI) => {
+    const { rejectWithValue } = thunkAPI;
+    try {
+        const res = await fetch(`https://my-json-server.typicode.com/PeterRizek009/fakeAPI/db/${id}`, {
+            method: 'DELETE',
+            headers: {
+                "content-type": "application/json charset=UTF=8"
+            }
+        }
+        )
+        console.log(res);
+
+    } catch (error) {
+        return rejectWithValue(error.message);
+    }
+})
+
+
 
 
 
@@ -96,7 +114,6 @@ const dataSlice = createSlice({
             state.error = null;
         },
         [getData.fulfilled]: (state, action) => {
-
             state.clothes = action.payload.results;
             state.loading = false
 
@@ -115,9 +132,23 @@ const dataSlice = createSlice({
         [insertData.fulfilled]: (state, action) => {
             state.loading = false
             state.clothes.push(action.payload);
-           // console.log(action.payload);
+            // console.log(action.payload);
         },
         [insertData.rejected]: (state, action) => {
+            state.loading = false
+            state.error = action.payload
+        },
+
+        //delete data
+        [deleteItem.pending]: (state, action) => {
+            state.loading = true
+            state.error = null;
+        },
+        [deleteItem.fulfilled]: (state, action) => {
+            state.loading = false
+            console.log(state.clothes);
+        },
+        [deleteItem.rejected]: (state, action) => {
             state.loading = false
             state.error = action.payload
         }
@@ -125,4 +156,5 @@ const dataSlice = createSlice({
 });
 
 export default dataSlice.reducer;
+export const { addToCart } = dataSlice.actions;
 

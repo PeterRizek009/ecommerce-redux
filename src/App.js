@@ -7,6 +7,7 @@ import { Routes, Route } from "react-router-dom";
 import InsertData from './components/insertdata/insertData';
 import Shopping from './components/shopping/shopping';
 import Loading from './components/loading/loading';
+import Cart from './components/cart/cart';
 
 
 function App() {
@@ -69,7 +70,8 @@ function App() {
               <Navbar />
               <Routes>
                <Route path="/" element={<Shopping  globalState={globalState}/>} />
-                <Route path="/insert" element={<InsertData />} />
+              <Route path="/insert" element={<InsertData />} />
+              <Route path="/cart" element={<Cart />} />
               </Routes>
             </>
           )
