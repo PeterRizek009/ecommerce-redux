@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { GrClose } from 'react-icons/gr'
 import { deletFromCart, increase, decrease } from '../../store/cartSlice';
@@ -12,7 +12,7 @@ const Cart = () => {
 
     const dispatch = useDispatch()
 
-    const CounterHandler = (type, itemID) => {
+    const CounterHandler =  useCallback((type, itemID) => {
         if (type === 'increase') {
             dispatch(increase(itemID))
      
@@ -21,8 +21,19 @@ const Cart = () => {
             dispatch(decrease(itemID))
            
         }
+    } ,[dispatch])
 
-    }
+    // const CounterHandler = (type, itemID) => {
+    //     if (type === 'increase') {
+    //         dispatch(increase(itemID))
+     
+    //     }
+    //     else {
+    //         dispatch(decrease(itemID))
+           
+    //     }
+
+    // }
 
 
 
