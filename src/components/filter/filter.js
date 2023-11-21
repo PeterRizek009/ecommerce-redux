@@ -89,9 +89,8 @@ const Filter = () => {
 
                   
                     <div className="w-full mx-10 my-4">
-                        <label htmlFor="default-range" className="block mb-2 text-md font-medium text-black">Price - USD</label>
-                        <input id="default-range" type="range"   step={1} defaultValue={slider.value} className="range range-error w-full" />
-
+                        <label htmlFor="default-range" className="block mb-2 text-md font-medium text-black">Price-USD</label>
+                        <input id="default-range" type="range" step={1} defaultValue={slider.value} className="range range-xs range-error w-full" onChange={(e) =>  setSlider({value : e.target.value})}/>
 
                         <div class="flex justify-start py-4">
                             <input

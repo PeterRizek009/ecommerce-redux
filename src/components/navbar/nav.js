@@ -1,4 +1,4 @@
-import React from 'react';
+import {React , useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { logInOut } from '../../store/authSlice';
@@ -9,8 +9,16 @@ const Navbar = () => {
 
     const dispatch = useDispatch()
 
+  
+
     const { isLoggedIn } = useSelector((state) => state.auth)
     const cartState = useSelector((state) => state.cart)
+
+
+    useEffect(() => {
+        const element = document.querySelector("data-theme")
+        console.log(element);
+    })
 
     return (
 
