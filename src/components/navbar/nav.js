@@ -15,10 +15,10 @@ const Navbar = () => {
     const cartState = useSelector((state) => state.cart)
 
 
-    useEffect(() => {
-        const element = document.querySelector("data-theme")
-        console.log(element);
-    })
+    // useEffect(() => {
+    //     const element = document.querySelector("data-theme")
+    //     console.log(element);
+    // })
 
     return (
 

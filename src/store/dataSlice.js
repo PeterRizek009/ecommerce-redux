@@ -107,6 +107,7 @@ const dataSlice = createSlice({
         loading: false,
         error: null
     },
+    
     extraReducers: {
         //getData
         [getData.pending]: (state, action) => {
@@ -152,9 +153,25 @@ const dataSlice = createSlice({
             state.loading = false
             state.error = action.payload
         }
-    }
+    },
+    reducers: {
+        filterByPrice: (state, action) => {
+            return {...state , clothes :  (state.clothes)?.filter((item) => item.price > action.payload)}
+        },
+        filterBySearch: (state, action) => {
+            if(action.payload !==  '') {
+                return {...state , clothes :  (state.clothes)?.filter((item) => (item.name).includes(action.payload) )}
+
+            }else{
+                return {...state }
+            }
+            
+            
+            
+        }
+    },
 });
 
 export default dataSlice.reducer;
-export const { addToCart } = dataSlice.actions;
+export const { filterByPrice , filterBySearch} = dataSlice.actions;
 
