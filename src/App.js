@@ -10,7 +10,7 @@ import Loading from './components/loading/loading';
 import Cart from './components/cart/cart';
 
 
-function App() {
+function App() { 
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
 

@@ -1,6 +1,7 @@
 {
   "name": "shoppingbyredux",
   "version": "0.1.0",
+  "homepage": "https://gitname.github.io/ecommerce-redux",
   "private": true,
   "dependencies": {
     "@headlessui/react": "^1.7.17",
@@ -24,6 +25,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -48,6 +51,7 @@
   },
   "devDependencies": {
     "daisyui": "^4.4.2",
+    "gh-pages": "^6.1.0",
     "tailwindcss": "^3.3.3"
   }
 }
