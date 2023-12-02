@@ -31,12 +31,25 @@ const Navbar = () => {
                             <img alt="logo" className="object-center h-[50px]  block" src={logo} />
                         </Link>
                         {/* Nav Links */}
-                        <ul className="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
+                        <ul className="hidden md:flex px-2 mx-auto font-semibold font-heading space-x-2">
                             <li>
-                                <Link className="hover:text-red-400" to={"/"}>Home</Link >
+                                <Link className="hover:text-red-400" to={"/"}>Home  <span className='mx-4'> | </span></Link >
                             </li>
-                            <li><Link className="hover:text-red-400" to={"/insert"}>Insert new Data</Link >
+                            <li>
+                                <Link className="hover:text-red-400" to={"/"}>About <span className='mx-4'> | </span></Link >
                             </li>
+                            <li>
+                                <Link className="hover:text-red-400" to={"/"}></Link >
+                            </li>
+                            {logInOut === true ?
+
+                                <li><Link className="hover:text-red-400" to={"/insert"}>Insert new Data</Link >
+                                </li>
+                                :
+                                <></>
+
+                            }
+
                         </ul>
                         {/* Header Icons */}
                         <div className="hidden xl:flex items-center space-x-5">

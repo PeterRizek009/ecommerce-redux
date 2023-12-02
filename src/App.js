@@ -6,11 +6,10 @@ import Navbar from './components/navbar/nav';
 import { Routes, Route } from "react-router-dom";
 import InsertData from './components/insertdata/insertData';
 import Shopping from './components/shopping/shopping';
-import Loading from './components/loading/loading';
 import Cart from './components/cart/cart';
 
 
-function App() { 
+function App() {
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
 
@@ -45,7 +44,6 @@ function App() {
   // }, [getData])
 
 
-
   const dispatch = useDispatch();
 
   const globalState = useSelector((state) => state)
@@ -59,23 +57,23 @@ function App() {
 
   return (
     <div className="App">
-      {
+      {/* {
         globalState.data.loading ?
           (
             <Loading/>
           )
           :
-          (
-            <>
-              <Navbar />
-              <Routes>
-               <Route path="/" element={<Shopping  globalState={globalState}/>} />
-              <Route path="/insert" element={<InsertData />} />
-              <Route path="/cart" element={<Cart />} />
-              </Routes>
-            </>
-          )
-      }
+          ( */}
+      <>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Shopping globalState={globalState} />} />
+          <Route path="/insert" element={<InsertData />} />
+          <Route path="/cart" element={<Cart />} />
+        </Routes>
+      </>
+      {/* )
+      } */}
 
     </div>
   );
