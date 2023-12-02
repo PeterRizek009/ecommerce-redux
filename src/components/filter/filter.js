@@ -1,7 +1,7 @@
 import { React, useEffect, useState } from 'react';
 import {filterByPrice , filterBySearch} from '../../store/dataSlice'
 import { useDispatch } from 'react-redux';
-
+import sidelogo from './sidelogo.png'
 
 
 const Filter = () => {
@@ -95,12 +95,16 @@ const Filter = () => {
                     <path clipRule="evenodd" fillRule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
                 </svg>
             </button>
-            <aside className="md:block w-[300px]  z-50 border-r-2 border-gray-200 shadow-md hidden" >
+            <aside className="md:block w-[300px] min-h-[100vh] z-50 border-r-2 border-gray-200 shadow-md hidden" >
                 <button className='absolute left-[250px] sm:hidden my-4'>
                     Close
                 </button>
 
                 <div className='flex flex-wrap justify-center'>
+
+                    <div className="w-full mx-6 my-10">
+                          <img alt="logo" className="object-center bg-cover  block" src={sidelogo} />
+                    </div>
                     <div className="w-full mx-6 my-10">
                         <div className="relative flex items-center w-full h-12 rounded-lg focus-within:shadow-lg bg-white border-gray-300 border-2 overflow-hidden">
                             <div className="grid place-items-center h-full w-12 text-gray-300">
@@ -113,7 +117,7 @@ const Filter = () => {
                     </div>
 
                   
-                    <div className="w-full mx-10 my-4">
+                    <div className="w-full mx-10 my-10">
                         <label htmlFor="default-range" className="block mb-2 text-md font-medium text-black">Price-USD</label>
                         <input id="default-range" type="range" step={1} defaultValue={slider.value} className="range range-xs range-error w-full" onChange={(e) =>  setSlider({value : e.target.value})}/>
 
