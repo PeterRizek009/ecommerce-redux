@@ -7,6 +7,7 @@ import { Routes, Route } from "react-router-dom";
 import InsertData from './components/insertdata/insertData';
 import Shopping from './components/shopping/shopping';
 import Cart from './components/cart/cart';
+import SignIn from './components/signin/signin';
 
 
 function App() {
@@ -70,6 +71,7 @@ function App() {
           <Route path="/" element={<Shopping globalState={globalState} />} />
           <Route path="/insert" element={<InsertData />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/signin" element={<SignIn />} />
         </Routes>
       </>
       {/* )

@@ -71,23 +71,22 @@ const Navbar = () => {
 
                             </Link>
                             {/* Sign In / Register      */}
-                            <button className="bg-red-500  mx-2 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg" onClick={() => dispatch(logInOut())}>{isLoggedIn === true ?
-                                "Sign out"
-                                :
-                                "Sign in"}</button>
-                        </div>
-
-
-                        <div className='mx-4'>
-                            <label className="flex cursor-pointer gap-2 ">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="5" /><path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4" /></svg>
-                                <input type="checkbox" value="synthwave" className="toggle theme-controller" />
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-                            </label>
-                        </div>
+                            <Link className="bg-red-500  mx-2 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg" to={'/signin'}>
+                                Sign in
+                                </Link>
                     </div>
-                    {/* Responsive navbar */}
-                    {/* <a className="xl:hidden flex mr-6 items-center" href="#">
+
+
+                    <div className='mx-4'>
+                        <label className="flex cursor-pointer gap-2 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="5" /><path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4" /></svg>
+                            <input type="checkbox" value="synthwave" className="toggle theme-controller" />
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                        </label>
+                    </div>
+                </div>
+                {/* Responsive navbar */}
+                {/* <a className="xl:hidden flex mr-6 items-center" href="#">
                         <Link className="flex items-center hover:text-gray-200" to={"/cart"}>
 
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -106,9 +105,9 @@ const Navbar = () => {
 
 
 
-                </nav>
-            </section>
-        </div>
+            </nav>
+        </section>
+        </div >
 
 
     );
