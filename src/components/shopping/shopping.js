@@ -32,15 +32,15 @@ const Shopping = ({ globalState }) => {
                         <div className="flex md:justify-between justify-start flex-wrap md:mt-4 my-1 md:mx-0 mx-1">
                             <div className='w-full md:w-[60%]'>
                                 <h3 className="text-red-500 text-xs tracking-widest title-font mb-1 ">{item.brandName}</h3>
-                                <h2 className="text-gray-600 title-font text-sm  font-medium cursor-pointer hover:text-orange-800 ">{item.name}</h2>
-                                <p className="mt-1">{item.price}<span className='text-green-800 text-xs'> USD</span></p>
+                                <h2 className="text-gray-600  title-font text-sm  font-medium cursor-pointer hover:text-orange-800 ">{item.name}</h2>
+                                <p className="mt-1 dark:text-red-600">{item.price}<span className='text-green-800 text-xs'> USD</span></p>
                             </div>
                             {/* <button className="bg-red-500 mx-1 hover:bg-red-700 text-white text-xs w-[80px] h-[30px] rounded-lg" onClick={() => dispatch(addToCart(item))}>
                             Add to Cart
                         </button> */}
                             <div>
                                 <button
-                                    className="w-[70px] py-1 duration-200 text-xs  rounded hover:bg-gray-800  hover:text-white border-[1px] border-gray-900 focus:outline-none md:mt-10 my-2"
+                                    className="w-[70px] py-1 duration-200 text-xs dark:text-red-600 rounded hover:bg-gray-800  hover:text-white border-[1px] border-gray-900 focus:outline-none md:mt-10 my-2"
                                     onClick={() => addNewItem(item)}>Add
                                     to cart
                                 </button>

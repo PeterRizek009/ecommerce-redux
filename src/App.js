@@ -12,42 +12,14 @@ import SignIn from './components/signin/signin';
 
 function App() {
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-
-  // const getData = useCallback(async () => {
-  //   await axios.request(
-  //     {
-  //       method: 'GET',
-  //       url: 'https://apidojo-hm-hennes-mauritz-v1.p.rapidapi.com/products/list',
-  //       params: {
-  //         country: 'us',
-  //         lang: 'en',
-  //         currentpage: '0',
-  //         pagesize: '30',
-  //         categories: 'men_all',
-  //         concepts: 'H&M MAN'
-  //       },
-  //       headers: {
-  //         'X-RapidAPI-Key': '8706630ab5mshf3e9e2dba093881p114d78jsn3b69bb0ba508',
-  //         'X-RapidAPI-Host': 'apidojo-hm-hennes-mauritz-v1.p.rapidapi.com'
-  //       }
-  //     })
-  //     .then(response => {
-  //       setData(response.data.results);
-  //     }).catch(error => console.log(error))
-  // }, [])
-
-
-
-
-  // useEffect(() => {
-  //   getData();
-  // }, [getData])
+  
 
 
   const dispatch = useDispatch();
 
   const globalState = useSelector((state) => state)
+ 
+
 
   useEffect(() => {
     dispatch(getData())
@@ -55,9 +27,12 @@ function App() {
 
 
 
+  
+
+
 
   return (
-    <div className="App">
+    <div className={globalState.darkmode ? 'App dark  bg-gray-800 text-white' : 'App  bg-white text-black'}>
       {/* {
         globalState.data.loading ?
           (

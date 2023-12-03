@@ -118,12 +118,12 @@ const Filter = () => {
 
                   
                     <div className="w-full mx-10 my-10">
-                        <label htmlFor="default-range" className="block mb-2 text-md font-medium text-black">Price-USD</label>
-                        <input id="default-range" type="range" step={1} defaultValue={slider.value} className="range range-xs range-error w-full" onChange={(e) =>  setSlider({value : e.target.value})}/>
+                        <label htmlFor="default-range" className="block mb-2 text-md font-medium text-black dark:text-white">Price-USD</label>
+                        <input id="default-range" type="range" step={1} defaultValue={slider.value} className="range range-xs range-error dark:bg-white w-full" onChange={(e) =>  setSlider({value : e.target.value})}/>
 
                         <div className="flex justify-start py-4">
                             <input
-                                className="peer h-full w-full rounded-md border border-blue-gray-200  bg-transparent  p-2.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-orange-500  focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
+                                className="peer h-full w-full rounded-md border border-blue-gray-200  bg-transparent  p-2.5 font-sans text-sm font-normal text-blue-gray-700  outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-orange-500  focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
                                 placeholder=" " type="number"  defaultValue={slider.value} value={slider.value}
                             />
                             <span className='mx-2 py-1'> - </span>
