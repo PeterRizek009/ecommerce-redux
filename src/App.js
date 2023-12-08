@@ -8,17 +8,16 @@ import InsertData from './components/insertdata/insertData';
 import Shopping from './components/shopping/shopping';
 import Cart from './components/cart/cart';
 import SignIn from './components/signin/signin';
+import SignUp from './components/signup/signup';
 
 
 function App() {
-
-  
 
 
   const dispatch = useDispatch();
 
   const globalState = useSelector((state) => state)
- 
+
 
 
   useEffect(() => {
@@ -27,12 +26,12 @@ function App() {
 
 
 
-  
+
 
 
 
   return (
-    <div className={globalState.darkmode ? 'App dark  bg-gray-800 text-white' : 'App  bg-white text-black'}>
+    <div className={globalState.darkmode ? 'App dark  bg-gray-700 text-white' : 'App  bg-white text-black'}>
       {/* {
         globalState.data.loading ?
           (
@@ -47,6 +46,7 @@ function App() {
           <Route path="/insert" element={<InsertData />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/signin" element={<SignIn />} />
+          <Route path="/signup" element={<SignUp />} />
         </Routes>
       </>
       {/* )

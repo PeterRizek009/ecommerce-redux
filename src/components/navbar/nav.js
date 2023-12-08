@@ -25,7 +25,7 @@ const Navbar = () => {
         <div className="flex flex-wrap items-center">
             <section className="relative mx-auto">
                 {/* navbar */}
-                <nav className="flex justify-between text-gray-900 dark:text-white w-screen shadow-md">
+                <nav className="flex justify-between text-gray-900 dark:text-white w-screen shadow-md dark:shadow-red-100">
                     <div className="px-5 xl:px-12 py-4 flex w-full items-center">
                         <Link className="text-3xl font-bold font-heading" to={"/"}>
                             <img alt="logo" className="object-center h-[50px]  block" src={logo} />

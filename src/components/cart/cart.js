@@ -48,17 +48,11 @@ const Cart = () => {
 
 
 
-
-
-
-
-
-
     return (
 
-        <div classname="relative my-5" >
+        <div classname="relative my-5 " >
             {cartState.cart.length === 0 ? (
-                <div className="container-fluid mt-20">
+                <div className="container-fluid mt-20 min-h-[100vh]">
                     <div className="row">
 
                         <div className="card flex justify-center items-center flex-wrap space-y-4">
@@ -78,7 +72,7 @@ const Cart = () => {
                 (
 
 
-                    <div className='mx-auto max-w-5xl justify-between px-6 md:flex md:space-x-6 xl:px-0 mt-10'>
+                    <div className='mx-auto max-w-5xl justify-between px-6 md:flex md:space-x-6 xl:px-0 mt-10 min-h-[100vh]'>
                         <div className="md:w-2/3 w-full">
                             {cartState.cart?.map((item) => (
 
