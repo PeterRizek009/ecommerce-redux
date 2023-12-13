@@ -4,23 +4,23 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <footer className="text-gray-600 body-font dark:text-white w-full shadow-md dark:bg-[#22092C]">
+        <footer className="text-gray-600 body-font dark:text-white w-full shadow-md dark:bg-[#22092C] border-t-2 border-gray-200 mt-4">
             <div className="container px-5 py-24 mx-auto">
                 <div className="flex flex-wrap md:text-left text-center order-first">
                     <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-                        <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h2>
+                        <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CUSTOMER CENTER</h2>
                         <nav className="list-none mb-10">
                             <li>
-                                <a className="text-gray-600 hover:text-gray-800">First Link</a>
+                                <h1 className="text-gray-600 hover:text-gray-800">0000-111-000-22</h1>
                             </li>
                             <li>
-                                <a className="text-gray-600 hover:text-gray-800">Second Link</a>
+                                <h1 className="text-gray-600 hover:text-gray-800">Weekdays 09:30-18:00</h1>
                             </li>
                             <li>
-                                <a className="text-gray-600 hover:text-gray-800">Third Link</a>
+                                <h1 className="text-gray-600 hover:text-gray-800">Weekends 12:00-13:00</h1>
                             </li>
                             <li>
-                                <a className="text-gray-600 hover:text-gray-800">Fourth Link</a>
+                                <h1 className="text-gray-600 hover:text-gray-800">Holidays: Sat, Sun , National Holidays</h1>
                             </li>
                         </nav>
                     </div>
