@@ -1,7 +1,7 @@
 {
   "name": "ecommerce-redux",
   "version": "0.1.0",
-  "homepage": "https://PeterRizek009.github.io/ecommerce-redux",
+  "homepage": "https://peterrizek009.github.io/ecommerce-redux/",
   "private": true,
   "dependencies": {
     "@headlessui/react": "^1.7.17",
