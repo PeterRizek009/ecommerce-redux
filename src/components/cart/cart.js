@@ -93,18 +93,18 @@ const Cart = () => {
 
                                         <div className="flex flex-col justify-normal space-y-6 items-center  w-[200px] ">
                                             <div className="flex items-center border-gray-100">
-                                                <span className="cursor-pointer rounded-l bg-gray-100 py-1 px-3.5 duration-100 hover:bg-red-500 hover:text-blue-50" onClick={() => CounterHandler('decrease', item.code)}> - </span>
+                                                <span className="cursor-pointer rounded-l bg-gray-400 py-1 px-3.5 duration-100 hover:bg-red-500 hover:text-blue-50" onClick={() => CounterHandler('decrease', item.code)}> - </span>
                                                 <h1 className="h-8 w-8 border pt-2 bg-white text-center text-xs outline-none">{item.count}</h1>
-                                                <span className="cursor-pointer rounded-r bg-gray-100 py-1 px-3 duration-100 hover:bg-red-500 hover:text-blue-50" onClick={() => CounterHandler('increase', item.code)} > + </span>
+                                                <span className="cursor-pointer rounded-r bg-gray-400 py-1 px-3 duration-100 hover:bg-red-500 hover:text-blue-50" onClick={() => CounterHandler('increase', item.code)} > + </span>
                                             </div>
                                             <div className="flex items-center space-x-4">
-                                                <p className="text-sm">Price : {item.price}
-                                                    <span className='text-green-800 text-xs'>USD</span>
+                                                <p className="text-sm dark:text-black">Price : {item.price}
+                                                    <span className='text-green-800 text-xs dark:text-black'>USD</span>
                                                 </p>
                                             </div>
                                             <div className="flex items-center space-x-4">
-                                                <p className="text-sm"> Total : {Number(item.price * item.count).toFixed(2)}
-                                                    <span className='text-green-800 text-xs'> USD</span>
+                                                <p className="text-sm dark:text-black"> Total : {Number(item.price * item.count).toFixed(2)}
+                                                    <span className='text-green-800 text-xs dark:text-black'> USD</span>
                                                 </p>
                                             </div>
                                             <div>
@@ -117,13 +117,13 @@ const Cart = () => {
                         </div>
 
                         {cartState.cart.length > 0 && (
-                            <div className="block h-full rounded-lg border bg-white p-6 shadow-md  md:w-1/3 mx-auto">
+                            <div className="block h-full rounded-lg border bg-white p-6 shadow-md text-gray-700 md:w-1/3 mx-auto">
                                 <div className="mb-2 flex justify-between">
-                                    <p className="text-gray-700">Subtotal</p>
-                                    <p className="text-gray-700">{getTotal()}</p>
+                                    <p>Subtotal</p>
+                                    <p >{getTotal()}</p>
                                 </div>
                                 <div className="flex justify-between">
-                                    <p className="text-gray-700">Free Shipping</p>
+                                    <p className="">Free Shipping</p>
 
                                 </div>
                                 <hr className="my-4" />

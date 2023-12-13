@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { logInOut } from '../../store/authSlice';
 import { toggleDarkMode } from '../../store/darkModeSlice'
 import logo from './Logo.png'
+import logoWhite from './logoWhite.png'
 
 
 const Navbar = () => {
@@ -22,13 +23,13 @@ const Navbar = () => {
 
     return (
 
-        <div className="flex flex-wrap items-center">
-            <section className="relative mx-auto">
+        <div>
+            <section>
                 {/* navbar */}
-                <nav className="flex justify-between text-gray-900 dark:text-white w-screen shadow-md dark:shadow-red-100">
-                    <div className="px-5 xl:px-12 py-4 flex w-full items-center">
+                <nav className="flex justify-between text-gray-900 dark:text-white w-full shadow-md dark:bg-[#22092C]">
+                    <div className="px-1 xl:px-12 py-4 flex w-full items-center">
                         <Link className="text-3xl font-bold font-heading" to={"/"}>
-                            <img alt="logo" className="object-center h-[50px]  block" src={logo} />
+                            <img alt="logo" className="object-center h-[50px]  block" src={darkModeState === true ? logoWhite : logo} />
                         </Link>
                         {/* Nav Links */}
                         <ul className="hidden md:flex px-2 mx-auto font-semibold font-heading space-x-2">

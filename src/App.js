@@ -9,6 +9,7 @@ import Shopping from './components/shopping/shopping';
 import Cart from './components/cart/cart';
 import SignIn from './components/signin/signin';
 import SignUp from './components/signup/signup';
+import Footer from './components/footer/footer';
 
 
 function App() {
@@ -31,7 +32,7 @@ function App() {
 
 
   return (
-    <div className={globalState.darkmode ? 'App dark  bg-gray-700 text-white' : 'App  bg-white text-black'}>
+    <div className={globalState.darkmode ? 'App dark  bg-[#5c175c] text-white' : 'App  bg-white text-black'}>
       {/* {
         globalState.data.loading ?
           (
@@ -48,6 +49,7 @@ function App() {
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
         </Routes>
+        <Footer/>
       </>
       {/* )
       } */}
