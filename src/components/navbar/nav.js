@@ -26,7 +26,7 @@ const Navbar = () => {
         <div>
             <section>
                 {/* navbar */}
-                <nav className="flex justify-between text-gray-900 dark:text-white w-full shadow-md dark:bg-[#22092C]">
+                <nav className="flex justify-between text-gray-900 dark:text-white w-full bg-[#F1EAFF] shadow-sm dark:bg-[#22092C]">
                     <div className="px-1 xl:px-12 py-4 flex w-full items-center">
                         <Link className="text-3xl font-bold font-heading" to={"/"}>
                             <img alt="logo" className="object-center h-[50px]  block" src={darkModeState === true ? logoWhite : logo} />
@@ -54,11 +54,11 @@ const Navbar = () => {
                         </ul>
                         {/* Header Icons */}
                         <div className="hidden xl:flex items-center space-x-5">
-                            <a className="hover:text-gray-800 text-gray-600 bg-neutral-200 p-2 rounded-md" href="#">
+                            {/* <a className="hover:text-gray-800 text-gray-600 bg-neutral-200 p-2 rounded-md" href="#">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                                 </svg>
-                            </a>
+                            </a> */}
                             <Link className="flex items-center hover:text-gray-800 text-gray-600 bg-neutral-200 p-2 rounded-md" to={"/cart"}>
 
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">

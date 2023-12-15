@@ -52,7 +52,7 @@ const Filter = () => {
                 </svg>
             </button>
 
-            <aside className="md:block w-[300px] min-h-[100vh] z-50  shadow-sm dark:shadow-red-100 hidden" >
+            <aside className="md:block w-[300px] min-h-[100vh] z-50  shadow-sm  hidden" >
                 <button className='absolute left-[250px] sm:hidden my-4'>
                     Close
                 </button>
