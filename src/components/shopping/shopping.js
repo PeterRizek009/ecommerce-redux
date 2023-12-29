@@ -27,7 +27,7 @@ const Shopping = ({ globalState }) => {
                 {globalState.data.clothes?.map((item) => (
                     <div className="block relative xl:w-1/6 md:w-1/3 w-[200px] h-[350px] md:p-2 p-1 bg-gray-100 border-gray-300 dark:border-[#F39F5A] border shadow-md rounded-md md:m-2 m-1" key={item.code}>
                         <div className="block relative h-48 overflow-hidden mt-4 cursor-pointer">
-                            <img alt="ecommerce" className="object-center bg-cover md:w-[90%] w-[80%] md:h-[100%] h-[80%] block mx-auto" src={item.images} />
+                            <img alt="ecommerce" className="object-center bg-cover md:w-[70%] w-[80%] md:h-[100%] h-[80%] block mx-auto" src={item.images} />
                         </div>
                         <div className="flex md:justify-between justify-end flex-wrap md:mt-4  md:mx-0 mx-1">
                             <div className='w-full md:w-[60%]'>

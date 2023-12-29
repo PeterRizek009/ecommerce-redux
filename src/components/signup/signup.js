@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {addNewUser} from '../../store/authSlice'
+import { addNewUser } from '../../store/authSlice'
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router';
 
@@ -19,10 +19,10 @@ const SignUp = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-       dispatch(addNewUser(user))
-       navigate("/signin")
-    } 
-   
+        dispatch(addNewUser(user))
+        navigate("/signin")
+    }
+
     return (
         <div className="flex w-full min-h-[100vh] justify-center dark:text-white">
             <div>
@@ -37,26 +37,26 @@ const SignUp = () => {
                                     <label htmlFor="text" className="block text-sm font-medium leading-6">First name </label>
                                     <div className="mt-2">
                                         <input id="firstname" name="firstname" type="text" required
-                                            className="block  rounded-md border-0 py-1.5  shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                            className="block  rounded-md border-0 py-1.5  shadow-sm ring-1 ring-inset ring-gray-300   focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                             value={user.firstName}
                                             onChange={(e) => {
-                                            setUser({
-                                                ...user, firstName : e.target.value
-                                            })
+                                                setUser({
+                                                    ...user, firstName: e.target.value
+                                                })
                                             }} />
                                     </div>
                                 </div>
                                 <div>
                                     <label htmlFor="text" className="block text-sm font-medium leading-6 ">Last name </label>
                                     <div className="mt-2">
-                                        <input id="lastname" name="lastname" type="text" 
-                                        required className="block  rounded-md border-0 py-1.5  shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" 
-                                        value={user.lastName}
-                                        onChange={(e) => {
-                                        setUser({
-                                            ...user, lastName : e.target.value
-                                        })
-                                        }}/>
+                                        <input id="lastname" name="lastname" type="text"
+                                            required className="block  rounded-md border-0 py-1.5  shadow-sm ring-1 ring-inset ring-gray-300   focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                            value={user.lastName}
+                                            onChange={(e) => {
+                                                setUser({
+                                                    ...user, lastName: e.target.value
+                                                })
+                                            }} />
                                     </div>
                                 </div>
                             </div>
@@ -65,33 +65,33 @@ const SignUp = () => {
                             <div>
                                 <label htmlFor="email" className="block text-sm font-medium leading-6 ">Email address</label>
                                 <div className="mt-2">
-                                    <input id="email" name="email" type="email" 
-                                    autoComplete="email" required className="block w-full rounded-md border-0 py-1.5   shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                                    value={user.email}
-                                    onChange={(e) => {
-                                    setUser({
-                                        ...user, email : e.target.value
-                                    })
-                                    }}/>
+                                    <input id="email" name="email" type="email"
+                                        autoComplete="email" required className="block w-full rounded-md border-0 py-1.5   shadow-sm ring-1 ring-inset ring-gray-300   focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                        value={user.email}
+                                        onChange={(e) => {
+                                            setUser({
+                                                ...user, email: e.target.value
+                                            })
+                                        }} />
                                 </div>
                             </div>
 
                             <div>
                                 <label htmlFor="password" className="block text-sm font-medium leading-6  ">Password</label>
                                 <div className="mt-2">
-                                    <input id="password" name="password" type="password" 
-                                    autoComplete="current-password" required className="block w-full rounded-md border-0 py-1.5   shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" 
-                                    value={user.password}
-                                    onChange={(e) => {
-                                    setUser({
-                                        ...user, password : e.target.value
-                                    })
-                                    }}/>
+                                    <input id="password" name="password" type="password"
+                                        autoComplete="current-password" required className="block w-full rounded-md border-0 py-1.5   shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                        value={user.password}
+                                        onChange={(e) => {
+                                            setUser({
+                                                ...user, password: e.target.value
+                                            })
+                                        }} />
                                 </div>
                             </div>
                             <div>
-                                <button type="submit" className="flex w-full justify-center rounded-md bg-red-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" 
-                                onClick={(e) => handleSubmit(e)}>Sign up</button>
+                                <button type="submit" className="flex w-full justify-center rounded-md bg-red-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                                    onClick={(e) => handleSubmit(e)}>Sign up</button>
                             </div>
                         </form>
 
@@ -99,9 +99,6 @@ const SignUp = () => {
                 </div>
 
             </div>
-
-         
-
 
         </div>
     );

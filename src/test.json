@@ -29,9 +29,9 @@
         },
         {
             "code": "4",
-            "name": "Slim Fit Suit Pants",
+            "name": "Regular Fit Jacket",
             "price": 44.99,
-            "images": "https://lp2.hm.com/hmgoepprod?set=source[/60/e8/60e895fb4310e19468729cb8710cee3299c08e1a.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/style]",
+            "images": "https://lp2.hm.com/hmgoepprod?set=source[/5e/b4/5eb41c56b6802a5ea14e3244a5c56210aa0e2e0d.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/style]",
             "brandName": "H&M",
             "gender": "MAN",
             "count": 1
@@ -112,6 +112,15 @@
             "name": "Slim Fit Stretch Shirt",
             "price": 24.99,
             "images": "https://lp2.hm.com/hmgoepprod?set=source[/bd/8b/bd8bb047bca20fdc8d8b39089cf8ed4b8d4a73fc.jpg],origin[dam],category[men_shirts_longsleeved],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/style]",
+            "brandName": "H&M",
+            "gender": "MAN",
+            "count": 1
+        },
+        {
+            "code": "14",
+            "name": "V-neck Cotton Sweater",
+            "images": "https://lp2.hm.com/hmgoepprod?set=source[/8f/f4/8ff4ab27d52561fa351d032dec29436d429b91b0.jpg],origin[dam],category[men_cardigansjumpers_jumpers],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/style]",
+            "price": 13.99,
             "brandName": "H&M",
             "gender": "MAN",
             "count": 1

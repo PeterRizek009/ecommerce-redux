@@ -42,8 +42,9 @@ function App() {
           ( */}
       <>
         <Navbar />
+        
         <Routes>
-          <Route path="/" element={<Shopping globalState={globalState} />} />
+          <Route path="" element={<Shopping globalState={globalState} />} />
           <Route path="/insert" element={<InsertData />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/signin" element={<SignIn />} />

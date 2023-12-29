@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import { Link, useNavigate } from "react-router-dom";
 import signImg from "./sign.jpg"
 import sign2 from "./sign2.jpg"
@@ -32,14 +33,14 @@ const SignIn = () => {
     return (
 
         <div className="flex w-full min-h-[100vh] item-start flex-wrap md:flex-nowrap">
-            <div className="w-full md:w-[50%] border-2 max-h-[600px] border-white m-8 grid grid-cols-2 grid-rows-2  shadow-md rounded-lg">
-                <img src={signImg} className="col-span-1 row-span-2 h-full pr-1" alt="signin"></img>
+            <div className="w-full md:w-[50%] border-2 max-h-[700px] border-gray-400  m-8 grid grid-cols-2 grid-rows-2  shadow-md rounded-lg">
+                <img src={signImg} className="col-span-1 row-span-2 h-full w-full pr-1" alt="signin"></img>
                 <img src={sign2} className="col-span-1 row-span-1 h-full" alt="signin"></img>
                 <img src={sign3} className="col-span-1 row-span-1 h-full pt-1" alt="signin"></img>
             </div>
 
             <div className="md:w-[50%] w-full">
-                <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+                <div className="flex min-h-full flex-col justify-center px-6 py-4 lg:px-8">
                     <div className="sm:mx-auto sm:w-full sm:max-w-sm">
                         <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900 dark:text-white uppercase">Sign in to your account</h2>
                     </div>
