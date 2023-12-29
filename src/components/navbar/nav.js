@@ -26,7 +26,7 @@ const Navbar = () => {
         <div>
 
             {/* navbar */}
-            <nav className="flex justify-between text-gray-900 dark:text-white w-full box-border bg-[#F1EAFF] shadow-sm dark:bg-[#22092C]">
+            <nav className="flex justify-between text-gray-900 dark:text-white w-full box-border bg-[#F1EAFF] shadow-sm dark:bg-[#22092C] min-w-[480px]">
 
                 <div className="px-1 xl:px-12 py-4 flex w-full overflow-x-auto items-center">
                     <Link className="text-3xl font-bold font-heading" to={"/"}>
