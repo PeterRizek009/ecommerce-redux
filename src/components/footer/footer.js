@@ -31,7 +31,7 @@ const Footer = () => {
             <div className="container px-5 py-24 mx-auto">
                 <div className="flex flex-wrap md:text-left text-center order-first md:flex-nowrap w-[100%]">
                     <div className="lg:w-1/4 md:w-1/2 w-full px-4 mb-6">
-                        <h2 className="title-font font-medium tracking-widest text-md mb-3">Customer Center</h2>
+                        <h1 className="font-bold tracking-widest text-lg mb-3">Customer Center</h1>
                         {footerList[0].map((item) => (
                             <>
                                 <nav className="list-none mb-2" key={item}>
@@ -44,7 +44,7 @@ const Footer = () => {
                         ))}
                     </div>
                     <div className="lg:w-1/4 md:w-1/2 w-full px-4 mb-6">
-                        <h2 className="title-font font-medium tracking-widest text-md mb-3">Shop with Us</h2>
+                        <h2 className="font-bold tracking-widest text-lg mb-3">Shop with Us</h2>
                         {footerList[1].map((item) => (
                             <>
 
@@ -59,7 +59,7 @@ const Footer = () => {
                     </div>
 
                     <div className="lg:w-1/4 md:w-1/2 w-full px-4 mb-6">
-                        <h2 className="title-font font-medium tracking-widest text-md mb-3">Company</h2>
+                        <h2 className="font-bold tracking-widest text-lg mb-3">Company</h2>
                         {footerList[2].map((item) => (
                             <>
 
