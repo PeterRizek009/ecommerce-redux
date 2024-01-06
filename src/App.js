@@ -42,7 +42,7 @@ function App() {
           ( */}
       <>
         <Navbar />
-        <Shopping/>
+        <Shopping globalState={globalState}/>
         <Routes>
           <Route path='/' element={<Shopping globalState={globalState} />} />
           <Route path="/insert" element={<InsertData />} />
