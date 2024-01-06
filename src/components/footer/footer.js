@@ -75,7 +75,7 @@ const Footer = () => {
 
                     <div className="lg:w-1/4 md:w-1/2 w-full px-4 ">
                         <h2 className="title-font font-medium  tracking-widest text-sm mb-3 uppercase">SUBSCRIBE to News Letter</h2>
-                        <div className="flex xl:flex-nowrap md:flex-nowrap lg:flex-wrap flex-wrap justify-center items-end md:justify-start">
+                        <div className="flex xl:flex-nowrap md:flex-wrap  flex-wrap justify-center items-end md:justify-start">
                             <div className="relative w-40 sm:w-auto xl:mr-4 lg:mr-0 sm:mr-4 mr-2">
                                 <input type="text" id="footer-field" name="footer-field" className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
                             </div>

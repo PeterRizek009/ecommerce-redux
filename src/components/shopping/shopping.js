@@ -40,7 +40,7 @@ const Shopping = ({ globalState }) => {
                         </button> */}
                             <div>
                                 <button
-                                    className="w-[70px] py-1 duration-200 text-xs dark:text-red-600 dark:bg-white rounded hover:bg-gray-800  hover:text-white border-[1px] border-gray-900 focus:outline-none md:mt-10 my-2 dark:hover:text-white  dark:hover:bg-[#5c175c68]"
+                                    className="w-[80px] py-2 px-0.5 mt-3 rounded-md bg-indigo-500 text-xs text-blue-50 hover:bg-blue-600  dark:hover:bg-[#5c175c68] capitalize"
                                     onClick={() => addNewItem(item)}>Add
                                     to cart
                                 </button>
