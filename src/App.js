@@ -10,6 +10,7 @@ import Cart from './components/cart/cart';
 import SignIn from './components/signin/signin';
 import SignUp from './components/signup/signup';
 import Footer from './components/footer/footer';
+import Loading from './components/loading/loading';
 
 
 function App() {
@@ -33,18 +34,19 @@ function App() {
 
   return (
     <div className={globalState.darkmode ? 'App dark  bg-[#5c175c] text-white' : 'App  bg-white text-black'}>
-      {/* {
+      {
         globalState.data.loading ?
           (
             <Loading/>
           )
           :
-          ( */}
+          ( 
       <>
         <Navbar />
-        <Shopping globalState={globalState}/>
+      
         <Routes>
           <Route path='/' element={<Shopping globalState={globalState} />} />
+          <Route path='/ecommerce-redux' element={<Shopping globalState={globalState} />} />
           <Route path="/insert" element={<InsertData />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/signin" element={<SignIn />} />
@@ -52,8 +54,8 @@ function App() {
         </Routes>
         <Footer/>
       </>
-      {/* )
-      } */}
+       )
+      } 
 
     </div>
   );
