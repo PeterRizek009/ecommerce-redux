@@ -80,7 +80,7 @@ const Filter = () => {
                                 <div className='flex flex-wrap justify-center'>
 
                                     <div className="w-full md:mx-6 mx-2 my-10">
-                                        <img alt="logo" className="object-center bg-cover block" src={sidelogo} />
+                                        <img alt="logo" className="object-center block" src={sidelogo} />
                                     </div>
                                     <div className="w-full md:mx-6 mx-2 my-10 ">
                                         <div className="relative flex items-center w-full h-12 rounded-lg focus-within:shadow-md bg-white border-gray-300  hover:border-orange-500 border-2 overflow-hidden ">
@@ -132,7 +132,7 @@ const Filter = () => {
         <>
             { windowWidth > 570 ? 
             (
-                <aside className="block w-[250px] min-h-[100vh] z-50  shadow-sm md:mr-4 sm:mr-20" >
+                <aside className="block w-[250px] min-h-[100vh]  shadow-sm md:mr-4 sm:mr-20" >
 
                     <div className='flex flex-wrap justify-center'>
 
