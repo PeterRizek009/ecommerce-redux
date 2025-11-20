@@ -29,9 +29,6 @@ function App() {
 
 
 
-
-
-
   return (
     <div className={globalState.darkmode ? 'App dark  bg-[#5c175c] text-white' : 'App  bg-white text-black'}>
       {

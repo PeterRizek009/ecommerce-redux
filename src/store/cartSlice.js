@@ -1,48 +1,44 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-
 const cartSlice = createSlice({
-     name: 'cart',
-     initialState: {
-          cart: [],
-     },
-     reducers: {
-          addToCart: (state, action) => {
-               state.cart.push(action.payload);
-          },
-          deletFromCart: (state, action) => {
-               state.cart.pop(action.payload);
-          },
-          increase: (state, action) => {
-               return {
-                    ...state,
-                    cart: (state.cart).map((item) =>
-                         item.code === action.payload ?
-                              { ...item, count: (item.count + 1) }
-                              :
-                              item
-                    )
-               };
+    name: "cart",
+    initialState: {
+        cart: []
+    },
 
+    reducers: {
+        addToCart: (state, action) => {
+            const item = action.payload;
 
-          },
-          decrease: (state, action) => {
-               return {
-                    ...state, cart: (state.cart).map((item) =>
-                         item.code === action.payload ?
-                              { ...item, count: (item.count - 1) }
-                              :
-                              item
-                    )
-               }
+            const exists = state.cart.find(p => p.id === item.id);
 
+            if (!exists) {
+                state.cart.push({ ...item, count: 1 }); // important
+            } else {
+                exists.count += 1;
+            }
+        },
 
-          }
-     }
+        deletFromCart: (state, action) => {
+            const id = action.payload;
+            state.cart = state.cart.filter(item => item.id !== id);
+        },
 
+        increase: (state, action) => {
+            const id = action.payload;
+            const item = state.cart.find(item => item.id === id);
+            if (item) item.count += 1;
+        },
 
+        decrease: (state, action) => {
+            const id = action.payload;
+            const item = state.cart.find(item => item.id === id);
+            if (item && item.count > 1) {
+                item.count -= 1;
+            }
+        }
+    }
 });
 
+export default cartSlice.reducer;
 export const { addToCart, deletFromCart, increase, decrease } = cartSlice.actions;
-
-export default cartSlice.reducer
