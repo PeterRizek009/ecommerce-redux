@@ -1,18 +1,17 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-
-
 const darkModeSlice = createSlice({
     name: 'darkmode',
-    initialState: false,
+    initialState: {
+        isDark: false,
+    },
 
     reducers: {
-        toggleDarkMode : (state ) => !state
-          
-        
+        toggleDarkMode: (state) => {
+            state.isDark = !state.isDark;
+        }
     }
-
 })
 
 export default darkModeSlice.reducer;
-export const  { toggleDarkMode } = darkModeSlice.actions;
+export const { toggleDarkMode } = darkModeSlice.actions;

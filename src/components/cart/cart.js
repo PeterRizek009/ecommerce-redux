@@ -31,14 +31,14 @@ const Cart = () => {
         <div className="relative my-5">
             {cartState.cart.length === 0 ? (
 
-                <div className="mt-20 min-h-[100vh] flex flex-col items-center justify-center">
+                <div className="my-20 flex flex-col items-center justify-center">
                     <img 
-                        src="https://i.imgur.com/NxmwdzX.png" 
-                        width={130} height={130} 
+                        src="https://i.imgur.com/L13XiaV.png" 
+                        width={200} height={200} 
                         alt="empty cart"
                     />
                     <h3 className="text-xl font-semibold my-4">Your Cart is Empty</h3>
-                    <p className="text-gray-600 mb-4">Add something to make me happy 😊</p>
+                    <p className="mb-4">Add something to make me happy 😊</p>
                     <Link 
                         to="/" 
                         className="mt-6 rounded-md bg-red-500 py-2 px-4 font-medium text-white hover:bg-red-600"
@@ -61,10 +61,10 @@ const Cart = () => {
                             >
                                 
                                 {/* IMAGE */}
-                                <div className="block relative md:h-[200px] overflow-hidden cursor-pointer sm:w-40 w-28">
+                                <div className="block relative md:h-[200px] overflow-hidden cursor-pointer sm:w-40 w-33">
                                     <img 
                                         alt={item.title}
-                                        className="w-full rounded-lg h-full object-contain"
+                                        className="w-full rounded-lg h-full object-cover"
                                         src={item.images[0]} 
                                     />
                                 </div>
@@ -94,7 +94,7 @@ const Cart = () => {
                                                 -
                                             </span>
 
-                                            <span className="h-8 w-8 border flex items-center justify-center bg-white text-sm">
+                                            <span className="h-8 w-8 border flex items-center text-black justify-center text-sm">
                                                 {item.count}
                                             </span>
 
@@ -106,12 +106,12 @@ const Cart = () => {
                                             </span>
                                         </div>
 
-                                        <p className="text-sm">
+                                        <p className="text-sm text-gray-700">
                                             Price: {item.price}
                                             <span className="text-green-700 text-xs"> USD</span>
                                         </p>
 
-                                        <p className="text-sm">
+                                        <p className="text-sm text-gray-700">
                                             Total: {(item.count * item.price).toFixed(2)}
                                             <span className="text-green-700 text-xs"> USD</span>
                                         </p>
@@ -119,7 +119,7 @@ const Cart = () => {
                                         {/* Delete */}
                                         <GrClose 
                                             size={22} 
-                                            className="cursor-pointer hover:text-red-500"
+                                            className="cursor-pointer hover:text-red-500 text-black"
                                             onClick={() => dispatch(deletFromCart(item.id))}
                                         />
 

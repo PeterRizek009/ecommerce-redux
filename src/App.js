@@ -30,7 +30,8 @@ function App() {
 
 
   return (
-    <div className={globalState.darkmode ? 'App dark  bg-[#5c175c] text-white' : 'App  bg-white text-black'}>
+    <div className={globalState.darkmode.isDark ? 'App dark bg-[#706175] text-white' : 'App bg-white text-gray-800'}>
+
       {
         globalState.data.loading ?
           (

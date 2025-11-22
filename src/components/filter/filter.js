@@ -133,17 +133,17 @@ const Filter = () => {
 
   // DESKTOP FILTER
   const filterDesktop = () => (
-    <aside className="block w-[250px] min-h-[100vh] shadow-sm mr-4">
+    <aside className="block w-[300px] min-h-[100vh] shadow-sm mr-4">
 
       <div className="flex flex-wrap justify-center">
 
         {/* LOGO */}
-        <div className="w-full mx-6 my-10">
+        {/* <div className="w-full mx-6 my-10">
           <img src={sidelogo} alt="logo" className="block mx-auto" />
-        </div>
+        </div> */}
 
         {/* SEARCH */}
-        <div className="w-full mx-6 my-6">
+        <div className="w-full mx-3 my-12">
           <div className="relative flex items-center w-full h-12 bg-white border-2 rounded-lg hover:border-orange-500">
             <div className="grid place-items-center h-full w-12 text-orange-600">
               🔍
@@ -168,7 +168,7 @@ const Filter = () => {
             min={slider.min}
             max={slider.max}
             step={1}
-            className="range range-xs range-error w-full"
+            className="range range-xs range-error w-full bg-orange-100"
             onChange={(e) =>
               setSlider({
                 ...slider,
@@ -177,11 +177,11 @@ const Filter = () => {
             }
           />
 
-          <div className="flex justify-between py-4">
+          <div className="flex justify-between py-4 text-gray-800">
             <input
               type="number"
               value={slider.value}
-              className="w-20 p-2 border rounded-md"
+              className="w-20 p-2 border rounded-md border-orange-400"
               onChange={(e) =>
                 setSlider({
                   ...slider,
@@ -194,7 +194,7 @@ const Filter = () => {
               type="number"
               value={slider.max}
               readOnly
-              className="w-20 p-2 border rounded-md"
+              className="w-20 p-2 border rounded-md border-orange-400"
             />
           </div>
         </div>
