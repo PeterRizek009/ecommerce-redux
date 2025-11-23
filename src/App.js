@@ -11,7 +11,7 @@ import SignIn from './components/signin/signin';
 import SignUp from './components/signup/signup';
 import Footer from './components/footer/footer';
 import Loading from './components/loading/loading';
-
+import LandingPage from './components/landingpage/landingpage';
 
 function App() {
 
@@ -43,8 +43,9 @@ function App() {
         <Navbar />
       
         <Routes>
-          <Route path='/' element={<Shopping globalState={globalState} />} />
-          <Route path='/ecommerce-redux' element={<Shopping globalState={globalState} />} />
+          <Route path='/' element={<LandingPage globalState={globalState}/>} />
+         <Route path='/ecommerce-redux/' element={<LandingPage globalState={globalState}/>} />
+          <Route path='/home' element={<Shopping globalState={globalState} />} />
           <Route path="/insert" element={<InsertData />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/signin" element={<SignIn />} />

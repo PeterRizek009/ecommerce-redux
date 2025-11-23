@@ -9,6 +9,8 @@ export const getData = createAsyncThunk("data/getData", async (_, thunkAPI) => {
     const response = await axios.get(
       "https://api.escuelajs.co/api/v1/products"
     );
+    console.log(response.data);
+    
     return response.data; // returns Array NOT object
   } catch (error) {
     return rejectWithValue(error.message);

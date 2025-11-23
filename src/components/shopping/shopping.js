@@ -1,21 +1,8 @@
-import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { addToCart } from "../../store/cartSlice";
+import { useState } from "react";
 import Filter from "../filter/filter";
+import AddToCartButton from "../buttons/AddToCartButton";
 
 const Shopping = ({ globalState }) => {
-  const cartState = useSelector((state) => state.cart);
-  const dispatch = useDispatch();
-
-  const addNewItem = (item) => {
-    const exists = cartState.cart.some((cartItem) => cartItem.id === item.id);
-    if (!exists) {
-      dispatch(addToCart(item));
-    } else {
-      console.log("Already exists in the cart");
-    }
-  };
-
   // ----------------------------- Pagination -----------------------------
   const itemsPerPage = 12; // عدد الكروت في الصفحة
   const [currentPage, setCurrentPage] = useState(1);
@@ -31,7 +18,6 @@ const Shopping = ({ globalState }) => {
     setCurrentPage(number);
     window.scrollTo(0, 0);
   };
-
 
   return (
     <div className="flex w-full">
@@ -80,12 +66,9 @@ const Shopping = ({ globalState }) => {
               </p>
 
               {/* Button */}
-              <button
-                onClick={() => addNewItem(item)}
-                className="mt-3 w-full bg-indigo-600 text-white py-1.5 rounded-md text-xs hover:bg-indigo-700"
-              >
-                Add To Cart
-              </button>
+              <div className="mt-5">
+                <AddToCartButton item={item} />
+              </div>
             </div>
           ))}
         </div>

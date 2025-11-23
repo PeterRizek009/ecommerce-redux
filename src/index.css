@@ -1,6 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "swiper/css";
+@import "swiper/css/navigation";
+
+
 
 @import url("https://fonts.googleapis.com/css2?family=Fasthand&family=Oswald&display=swap");
 

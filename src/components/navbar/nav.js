@@ -1,62 +1,63 @@
-import { React, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { toggleDarkMode } from '../../store/darkModeSlice';
-import logo from './Logo.png';
-import logoWhite from './logoWhite.png';
-import { Fade as Hamburger } from "hamburger-react";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { FiHeart, FiShoppingCart, FiSearch, FiMenu, FiX } from "react-icons/fi";
+import { FaAngleDown } from "react-icons/fa";
+import logo from "./Logo.png";
+import { useDispatch, useSelector } from "react-redux";
 
 const Navbar = () => {
-
-  const dispatch = useDispatch();
   const cartState = useSelector((state) => state.cart);
-  const darkModeState = useSelector((state) => state.darkmode.isDark);
 
-
-  const [active, setActive] = useState(false);
-
-  const showMenu = () => setActive(!active);
-
-  const links = ["Home", "About", "Coupons", "Help"];
+  const [languageOpen, setLanguageOpen] = useState(false);
+  const [mobileMenu, setMobileMenu] = useState(false);
 
   return (
-    <nav className='w-full sticky top-0 z-50 shadow-md min-w-[480px] bg-[#1E1E1E] text-white'>
+    <nav className="w-full bg-white shadow-sm sticky top-0 z-50">
+      {/* Top Banner */}
+      <div className="w-full bg-black text-white text-sm py-2 text-center">
+        Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!{" "}
+        <span className="underline cursor-pointer">ShopNow</span>
+      </div>
 
-      {/* Main Container */}
-      <div className="px-4 md:px-10 py-4 flex justify-between items-center">
-
+      {/* MAIN NAV */}
+      <div className="flex items-center justify-between px-6 py-4">
         {/* Logo */}
-        <Link to={"/"}>
-          <img
-            src={logoWhite}
-            alt="logo"
-            className="h-[50px]"
-          />
+        <Link to="/">
+          <img src={logo} alt="logo" className="h-[40px]" />
         </Link>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex space-x-6 font-semibold tracking-wide">
-          {links.map((link) => (
-            <li key={link}>
-              <Link className="hover:text-orange-400 transition" to={`/${link}`}>
-                {link}
-              </Link>
-            </li>
-          ))}
+        <ul className="hidden md:flex space-x-8 font-medium text-gray-700">
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/contact">Contact</Link>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+          <li>
+            <Link to="/signup">Sign Up</Link>
+          </li>
         </ul>
 
-        {/* Icons */}
+        {/* Right Side (Desktop Only) */}
         <div className="hidden md:flex items-center space-x-6">
+          {/* Search */}
+          <div className="relative">
+            <input
+              type="text"
+              placeholder="What are you looking for?"
+              className="border border-gray-300 rounded-md pl-4 pr-10 py-2 w-[260px] focus:outline-none"
+            />
+            <FiSearch className="absolute right-3 top-3 text-gray-500" />
+          </div>
 
-          {/* Cart */}
-          <Link to={"/cart"} className="relative hover:text-orange-400 transition">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7"
-              fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 
-                0a2 2 0 100 4 2 2 0 000-4zm-8 
-                2a2 2 0 11-4 0 2 2 0 014 0z" />
-            </svg>
+          <FiHeart className="text-2xl cursor-pointer" />
+
+          <Link to="/cart" className="relative inline-block">
+            <FiShoppingCart className="text-2xl cursor-pointer" />
 
             {cartState.cart.length > 0 && (
               <span className="absolute -top-2 -right-3 bg-red-600 text-white text-xs rounded-full px-2 py-[2px]">
@@ -64,79 +65,117 @@ const Navbar = () => {
               </span>
             )}
           </Link>
+        </div>
 
-          {/* Mode Toggle */}
-          <button onClick={() => dispatch(toggleDarkMode())}>
-            {darkModeState ? (
-              <svg xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 text-yellow-400" fill="none"
-                viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                <circle cx="12" cy="12" r="5" />
-                <path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4
-              18.4l1.4 1.4M1 12h2M21 12h2M4.2 
-              19.8l1.4-1.4M18.4 5.6l1.4-1.4"/>
-              </svg>
-            ) : (
-              <svg xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 text-gray-200" fill="currentColor"
-                viewBox="0 0 24 24">
-                <path d="M21 12.79A9 9 0 1111.21 
-              3 7 7 0 0021 12.79z"/>
-              </svg>
-            )}
-          </button>
+        {/* Language Dropdown (Desktop Only) */}
+        <div
+          className="relative cursor-pointer hidden md:flex items-center"
+          onClick={() => setLanguageOpen(!languageOpen)}
+        >
+          <span className="mr-1">English</span>
+          <FaAngleDown />
 
-          {/* Sign In */}
-          <Link
-            to={"/signin"}
-            className="bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded uppercase text-sm font-bold transition"
-          >
-            Sign in
-          </Link>
+          {languageOpen && (
+            <div className="absolute top-8 right-0 bg-white border rounded shadow-md w-28">
+              <p className="px-3 py-2 hover:bg-gray-100 cursor-pointer">
+                English
+              </p>
+              <p className="px-3 py-2 hover:bg-gray-100 cursor-pointer">
+                Arabic
+              </p>
+            </div>
+          )}
         </div>
 
         {/* Mobile Hamburger */}
-        <div className="md:hidden scale-75">
-          <Hamburger onToggle={showMenu} color="white" />
+        <div className="md:hidden">
+          {mobileMenu ? (
+            <FiX
+              className="text-3xl cursor-pointer"
+              onClick={() => setMobileMenu(false)}
+            />
+          ) : (
+            <FiMenu
+              className="text-3xl cursor-pointer"
+              onClick={() => setMobileMenu(true)}
+            />
+          )}
         </div>
-
       </div>
 
-      {/* Mobile Menu */}
-      {active && (
-        <ul className={`md:hidden flex flex-col py-4 px-6 space-y-4 font-semibold 
-            ${darkModeState ? "bg-[#1A1A1A]" : "bg-[#222] text-white"} shadow-lg`}>
-          {links.map((link) => (
-            <li key={link}>
-              <Link className="hover:text-orange-400" to={`/${link}`}>
-                {link}
+      {/* MOBILE MENU */}
+      {mobileMenu && (
+        <div className="md:hidden bg-white shadow-md px-6 py-4 space-y-4 animate-fade-down">
+          {/* Search Mobile */}
+          <div className="relative">
+            <input
+              type="text"
+              placeholder="Search..."
+              className="border w-full border-gray-300 rounded-md pl-4 pr-10 py-2 focus:outline-none"
+            />
+            <FiSearch className="absolute right-3 top-3 text-gray-600" />
+          </div>
+
+          {/* Menu Links */}
+          <ul className="space-y-4 font-medium text-gray-700">
+            <li>
+              <Link to="/" onClick={() => setMobileMenu(false)}>
+                Home
               </Link>
             </li>
-          ))}
+            <li>
+              <Link to="/contact" onClick={() => setMobileMenu(false)}>
+                Contact
+              </Link>
+            </li>
+            <li>
+              <Link to="/about" onClick={() => setMobileMenu(false)}>
+                About
+              </Link>
+            </li>
+            <li>
+              <Link to="/signup" onClick={() => setMobileMenu(false)}>
+                Sign Up
+              </Link>
+            </li>
+          </ul>
 
-          {/* Cart in Mobile */}
-          <Link to={"/cart"} className="relative flex items-center space-x-2">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7"
-              fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 
-                13L5.4 5M7 13l-2.293 
-                2.293c-.63.63-.184 1.707.707 
-                1.707H17m0 
-                0a2 2 0 100 4 2 2 0 000-4zm-8 
-                2a2 2 0 11-4 0 2 2 0 014 0z"/>
-            </svg>
+          {/* Icons */}
+          <div className="flex items-center space-x-6 pt-4 border-t">
+            <FiHeart className="text-2xl cursor-pointer" />
 
-            {cartState.cart.length > 0 && (
-              <span className="absolute -top-2 left-6 bg-red-600 text-white text-xs rounded-full px-2 py-[2px]">
-                {cartState.cart.length}
-              </span>
-            )}
-          </Link>
+            <Link to="/cart" className="relative inline-block">
+              <FiShoppingCart className="text-2xl cursor-pointer" />
 
-        </ul>
+              {cartState.cart.length > 0 && (
+                <span className="absolute -top-2 -right-3 bg-red-600 text-white text-xs rounded-full px-2 py-[2px]">
+                  {cartState.cart.length}
+                </span>
+              )}
+            </Link>
+
+            {/* Language in mobile */}
+            <div
+              className="relative cursor-pointer flex items-center"
+              onClick={() => setLanguageOpen(!languageOpen)}
+            >
+              <span className="mr-1">English</span>
+              <FaAngleDown />
+
+              {languageOpen && (
+                <div className="absolute top-8 left-0 bg-white border rounded shadow-md w-28">
+                  <p className="px-3 py-2 hover:bg-gray-100 cursor-pointer">
+                    English
+                  </p>
+                  <p className="px-3 py-2 hover:bg-gray-100 cursor-pointer">
+                    Arabic
+                  </p>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
       )}
-
     </nav>
   );
 };
