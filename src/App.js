@@ -43,7 +43,7 @@ function App() {
         <Navbar />
       
         <Routes>
-          <Route path='/' element={<LandingPage />} />
+          {/* <Route path='/' element={<LandingPage />} /> */}
          <Route path='/ecommerce-redux/' element={<LandingPage />} />
           <Route path='/home' element={<Shopping  />} />
           <Route path="/insert" element={<InsertData />} />
