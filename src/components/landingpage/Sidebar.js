@@ -6,8 +6,7 @@ const Sidebar = () => {
     "Home & Lifestyle",
     "Medicine",
     "Sports & Outdoor",
-    "Baby’s & Toys",
-    "Groceries & Pets",
+    "Baby’s Fashion",
     "Health & Beauty",
   ];
 

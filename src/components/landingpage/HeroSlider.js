@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 
 const HeroSlider = () => {
   const images = [
-    "https://images.pexels.com/photos/507410/pexels-photo-507410.jpeg",
-    "https://images.pexels.com/photos/18105/pexels-photo.jpg"
+    "https://images.pexels.com/photos/3768005/pexels-photo-3768005.jpeg",
+    "https://images.pexels.com/photos/1884581/pexels-photo-1884581.jpeg"
   ];
 
   const [index, setIndex] = useState(0);

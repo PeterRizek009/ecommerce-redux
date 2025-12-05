@@ -43,9 +43,9 @@ function App() {
         <Navbar />
       
         <Routes>
-          <Route path='/' element={<LandingPage globalState={globalState}/>} />
-         <Route path='/ecommerce-redux/' element={<LandingPage globalState={globalState}/>} />
-          <Route path='/home' element={<Shopping globalState={globalState} />} />
+          <Route path='/' element={<LandingPage />} />
+         <Route path='/ecommerce-redux/' element={<LandingPage />} />
+          <Route path='/home' element={<Shopping  />} />
           <Route path="/insert" element={<InsertData />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/signin" element={<SignIn />} />

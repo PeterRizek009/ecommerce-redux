@@ -1,16 +1,21 @@
 import { useState } from "react";
 import Filter from "../filter/filter";
 import AddToCartButton from "../buttons/AddToCartButton";
+import { useSelector } from "react-redux";
+import ProductCard from "../cards/card";
 
-const Shopping = ({ globalState }) => {
-  // ----------------------------- Pagination -----------------------------
+
+const Shopping = () => {
+
+  const { clothes } = useSelector((state) => state.data);
+
   const itemsPerPage = 12; // عدد الكروت في الصفحة
   const [currentPage, setCurrentPage] = useState(1);
 
   const indexOfLast = currentPage * itemsPerPage;
   const indexOfFirst = indexOfLast - itemsPerPage;
 
-  const clothes = globalState.data.clothes || [];
+  
   const currentItems = clothes.slice(indexOfFirst, indexOfLast);
   const totalPages = Math.ceil(clothes.length / itemsPerPage);
 
@@ -27,49 +32,18 @@ const Shopping = ({ globalState }) => {
       {/* Main Content */}
       <div className="w-full p-4">
         {/* Product Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-4 gap-4">
           {currentItems.map((item) => (
-            <div
-              key={item.id}
-              className="bg-gray-200 rounded-xl shadow p-3 hover:shadow-lg transition cursor-pointer border-2-white"
-              style={{ minHeight: "320px" }}
-            >
-              {/* Image */}
-              <div className="w-full h-40 bg-gray-400 rounded flex items-center justify-center overflow-hidden">
-                <img
-                  src={item.images?.[0]}
-                  alt={item.title}
-                  className="object-cover w-full h-full"
-                />
-              </div>
+  <div
+            key={item.id}
+            className="border rounded-xl p-4 relative flex flex-col justify-between h-[420px]"
+          >
+           <ProductCard item={item} />
+            
+             <AddToCartButton item={item} />
+          </div>
 
-              {/* Brand */}
-              <p className="text-red-400 text-xs mt-3">
-                {item.brand || "Brand"}
-              </p>
-
-              {/* Title — ONE LINE ONLY */}
-              <h3
-                className="text-gray-800 font-semibold text-sm mt-1 leading-tight"
-                style={{
-                  whiteSpace: "nowrap",
-                  overflow: "hidden",
-                  textOverflow: "ellipsis",
-                }}
-              >
-                {item.title}
-              </h3>
-
-              {/* Price */}
-              <p className="text-green-700 font-bold text-sm mt-2">
-                {item.price} <span className="text-xs">USD</span>
-              </p>
-
-              {/* Button */}
-              <div className="mt-5">
-                <AddToCartButton item={item} />
-              </div>
-            </div>
+           
           ))}
         </div>
 

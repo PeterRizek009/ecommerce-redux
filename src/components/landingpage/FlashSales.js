@@ -2,9 +2,10 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
-import { FiHeart, FiEye } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import AddToCartButton from "../buttons/AddToCartButton";
+import ProductCard from "../cards/card";
+import ViewAllProductsButton from "../buttons/viewallproductsBTN";
 
 // COUNTDOWN FUNCTION
 const getRemainingTime = (endTime) => {
@@ -116,32 +117,7 @@ const FlashSales = () => {
                 </span>
 
                 {/* Top icons */}
-                <div className="absolute top-3 right-3 flex flex-col gap-2">
-                  <div className="p-2 bg-white rounded-full shadow cursor-pointer">
-                    <FiHeart />
-                  </div>
-                  <div className="p-2 bg-white rounded-full shadow cursor-pointer">
-                    <FiEye />
-                  </div>
-                </div>
-
-                {/* IMAGE fixed height */}
-                <img
-                  src={item.images?.[0]}
-                  alt={item.title}
-                  className="w-full h-[200px] object-cover rounded"
-                />
-
-                {/* TITLE fixed height */}
-                <p className="mt-3 font-semibold text-sm h-[40px] overflow-hidden">
-                  {item.title}
-                </p>
-
-                {/* PRICE */}
-                <div>
-                  <p className="text-red-500 font-bold">${item.price}</p>
-                  <p className="line-through text-gray-400 text-sm">$160</p>
-                </div>
+                <ProductCard item={item} />
 
                 {/* ADD TO CART — stick to bottom */}
                 <div>
@@ -153,14 +129,7 @@ const FlashSales = () => {
         </Swiper>
       </div>
       {/* VIEW ALL PRODUCTS BUTTON */}
-      <div className="text-center mt-10">
-        <Link
-          to={"/home"}
-          className="bg-red-500 hover:bg-red-600 text-white px-8 py-2 rounded-md"
-        >
-          View All Products
-        </Link>
-      </div>
+    <ViewAllProductsButton/>
     </div>
   );
 };
