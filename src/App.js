@@ -10,7 +10,6 @@ import Cart from "./components/cart/cart";
 import SignIn from "./components/signin/signin";
 import SignUp from "./components/signup/signup";
 import Footer from "./components/footer/footer";
-import Loading from "./components/loading/loading";
 import LandingPage from "./components/landingpage/landingpage";
 
 function App() {
