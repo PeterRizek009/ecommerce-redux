@@ -110,9 +110,9 @@ const FlashSales = () => {
         >
           {clothes?.slice(0, 10)?.map((item) => (
             <SwiperSlide key={item.id} className="!w-auto">
-              <div className="border rounded-xl p-2 flex flex-col justify-between h-full w-[200px] relative shadow-sm">
+              <div className="relative border rounded-xl p-2 flex flex-col justify-between h-full w-[200px] relative shadow-sm">
                 {/* Discount */}
-                <span className="absolute top-3 left-3 bg-red-500 text-white px-3 py-1 text-sm rounded">
+                <span className="absolute top-3 left-3 bg-red-500 text-white px-3 py-1 text-sm rounded z-20">
                   -40%
                 </span>
 
