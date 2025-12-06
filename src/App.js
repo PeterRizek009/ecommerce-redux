@@ -30,9 +30,9 @@ function App() {
           : "App bg-white text-gray-800"
       }
     >
-      {globalState.data.loading ? (
+      {/* {globalState.data.loading ? (
         <Loading />
-      ) : (
+      ) : ( */}
         <>
           <Navbar />
 
@@ -47,7 +47,7 @@ function App() {
           </Routes>
           <Footer />
         </>
-      )}
+      
     </div>
   );
 }
